@@ -1,0 +1,32 @@
+{
+  "entities": {
+    "CreditAnalysis": {
+      "title": "Credit Analysis",
+      "description": "A single credit analysis record for a user.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "The UID of the user who owns this analysis." },
+        "score": { "type": "number" },
+        "grade": { "type": "string" },
+        "summary": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "metrics": {
+          "type": "object",
+          "properties": {
+            "monthlyInflow": { "type": "number" },
+            "monthlyOutflow": { "type": "number" },
+            "consistencyScore": { "type": "number" },
+            "savingsRate": { "type": "number" }
+          }
+        }
+      },
+      "required": ["userId", "score", "grade", "summary", "timestamp", "metrics"]
+    }
+  },
+  "firestore": {
+    "/analyses/{analysisId}": {
+      "schema": "CreditAnalysis",
+      "description": "Collection of credit analyses."
+    }
+  }
+}

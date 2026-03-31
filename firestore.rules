@@ -1,0 +1,42 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // ===============================================================
+    // Helper Functions
+    // ===============================================================
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+    function isDocOwner() {
+      return isAuthenticated() && request.auth.uid == resource.data.userId;
+    }
+
+    // ===============================================================
+    // Data Model Validation
+    // ===============================================================
+    function isValidAnalysis(data) {
+      return data.userId is string &&
+             data.score is number && data.score >= 300 && data.score <= 850 &&
+             data.grade is string &&
+             data.summary is string && data.summary.size() < 2000 &&
+             data.timestamp is string &&
+             data.metrics is map &&
+             data.metrics.monthlyInflow is number &&
+             data.metrics.monthlyOutflow is number &&
+             data.metrics.consistencyScore is number &&
+             data.metrics.savingsRate is number;
+    }
+
+    match /analyses/{analysisId} {
+      allow read: if isDocOwner();
+      allow create: if isAuthenticated() && 
+                      request.resource.data.userId == request.auth.uid &&
+                      isValidAnalysis(request.resource.data);
+      allow update: if false; // Analyses are immutable records
+      allow delete: if isDocOwner();
+    }
+  }
+}

@@ -1,0 +1,15 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+firebase-applet-config.json
+*.key
+*.pem
+*.p12
+secrets.json
+.secrets/
+credentials.json

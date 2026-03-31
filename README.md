@@ -1,45 +1,69 @@
-# AltScore AI: The Ultimate Credit Scoring Dashboard
+# AltScore AI // The Ultimate Credit Scoring Dashboard
 
-**AltScore AI** is a high-end, production-ready technical dashboard designed to revolutionize credit scoring using alternative data. It leverages AI to analyze M-Pesa transaction patterns, providing a sophisticated "Creditworthiness Index" for individuals and small businesses who lack traditional credit history.
+[![React](https://img.shields.io/badge/React-18+-blue.svg)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-Latest-646CFF.svg)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.0-38B2AC.svg)](https://tailwindcss.com/)
+[![Firebase](https://img.shields.io/badge/Firebase-Auth%20%26%20Firestore-FFCA28.svg)](https://firebase.google.com/)
+[![Gemini AI](https://img.shields.io/badge/AI-Gemini%203%20Flash-4285F4.svg)](https://ai.google.dev/)
+
+**AltScore AI** is a high-fidelity, production-ready credit scoring platform designed to bridge the gap for the "credit invisible." By leveraging **alternative data**—specifically M-Pesa transaction patterns and financial SMS records—the platform generates a sophisticated **Creditworthiness Index** that empowers individuals and small businesses to access formal capital.
 
 ---
 
-## 🌟 Key Features
+## 🏛️ The Philosophy
 
-### 1. **AI-Powered M-Pesa Parser**
-*   **Pattern Recognition:** Extracts transaction frequency, savings behavior, and business activity from uploaded `.csv` or `.txt` statements.
-*   **Alternative Data:** Uses non-traditional metrics like consistency of deposits and resilience to financial shocks.
+In emerging markets, traditional credit bureaus often ignore the vast majority of economic activity. **AltScore AI** operates on the principle that *financial discipline is visible in daily patterns*, not just formal bank statements. We transform raw mobile money data into a professional financial asset.
 
-### 2. **Technical Dashboard & Radar Chart**
-*   **5 Pillars of Credit:** Visualizes Consistency, Savings, Liquidity, Resilience, and Business Activity using high-contrast radar charts.
-*   **Grade Badge:** Assigns a clear credit grade (A+, B, etc.) based on a weighted AI scoring model.
+---
+
+## 🎨 Visual Identity: "Paper & Ink"
+
+The dashboard features our **Magnum Opus** design theme—a deliberate pairing of high-density technical grids and refined editorial typography.
+
+*   **Typography:** A sophisticated blend of **Cormorant Garamond** (Serif) for authority, **Inter** (Sans) for utility, and **JetBrains Mono** for technical precision.
+*   **Aesthetic:** Inspired by mid-century scientific journals and modern financial reports. High-contrast borders, thick shadows, and a "Paper & Ink" color palette.
+*   **Motion:** Fluid transitions powered by `motion/react` that guide the user through the analysis lifecycle.
+
+---
+
+## 🌟 Core Capabilities
+
+### 1. **AI-Powered Pattern Analysis**
+*   **M-Pesa Parser:** A robust engine that extracts transaction frequency, savings behavior, and business activity from raw text or CSV statements.
+*   **Gemini 3 Flash Integration:** Performs deep reasoning on financial behavior to identify hidden strengths (e.g., "Shock Resilience") and risks traditional models miss.
+
+### 2. **The 5 Pillars of Credit**
+Visualized via a high-contrast radar chart, we score users across five critical dimensions:
+*   **Consistency:** Regularity of inflows and deposits.
+*   **Savings:** Percentage of income retained over time.
+*   **Liquidity:** Immediate access to cash for emergencies.
+*   **Resilience:** Ability to maintain stability during financial shocks.
+*   **Business Activity:** Detection of entrepreneurial patterns in transaction data.
 
 ### 3. **"What-If" Credit Simulator**
-*   **Interactive Modeling:** Users can adjust their financial behavior (e.g., "What if I save 10% more?") to see the real-time impact on their credit score.
-*   **Predictive Insights:** Provides actionable advice on how to improve creditworthiness.
+An interactive modeling tool that allows users to proactively manage their financial future. Adjust sliders for consistency or savings rate to see the real-time impact on your simulated credit score.
 
-### 4. **Editorial Credit Report**
-*   **Professional Output:** Generates a formal, printable credit report designed like a high-end financial document.
-*   **Verification ID:** Each report includes a unique ID for authenticity and verification by lenders.
+### 4. **Editorial Credit Reports**
+Generates a formal, printable credit report designed like a high-end financial document. Each report includes an **Executive Summary**, **Risk Assessment**, and **Strategic Guidance**, complete with a unique **Verification ID**.
 
 ### 5. **Loan Marketplace**
-*   **Dynamic Matching:** Matches users with personalized loan products based on their current AI-generated score.
-*   **Transparent Terms:** Displays interest rates and repayment periods tailored to the user's risk profile.
+A dynamic matching engine that connects users with personalized loan products from partner micro-lenders based on their real-time AI score.
 
-### 6. **Multilingual Support**
-*   **Localization:** Full support for **English** and **Swahili**, ensuring accessibility for a broader user base in East Africa.
+### 6. **Swahili Localization**
+Full support for **English** and **Swahili**, ensuring the tool is accessible to the local community it serves.
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Technical Architecture
 
-*   **Frontend:** React 18+ with Vite
-*   **Styling:** Tailwind CSS (Mobile-First, Technical Dashboard Aesthetic)
-*   **Animations:** `motion/react` (Framer Motion)
-*   **Charts:** Recharts (Radar, Bar, and Line charts)
-*   **Icons:** Lucide-React
-*   **Backend:** Firebase (Authentication & Firestore)
-*   **Typography:** Cormorant Garamond (Serif), Inter (Sans), JetBrains Mono (Technical)
+*   **Frontend:** React 18 (Functional Components, Hooks)
+*   **State Management:** React `useState` & `useMemo` for real-time score simulation.
+*   **Data Visualization:** `recharts` for high-fidelity radar and bar charts.
+*   **Backend:** 
+    *   **Firebase Auth:** Secure Google Sign-In.
+    *   **Cloud Firestore:** Real-time persistence for analysis history.
+    *   **Security Rules:** Strict "Owner-Only" access controls for PII protection.
+*   **AI Engine:** `@google/genai` SDK for structured JSON analysis.
 
 ---
 
@@ -54,8 +78,8 @@
 npm install
 ```
 
-### 3. Firebase Configuration
-Ensure you have a `firebase-applet-config.json` in the root directory with your project credentials:
+### 3. Configuration
+Create a `firebase-applet-config.json` in the root directory:
 ```json
 {
   "apiKey": "YOUR_API_KEY",
@@ -66,7 +90,7 @@ Ensure you have a `firebase-applet-config.json` in the root directory with your 
 }
 ```
 
-### 4. Running the App
+### 4. Development
 ```bash
 npm run dev
 ```
@@ -75,12 +99,12 @@ npm run dev
 
 ## 🔒 Security & Privacy
 
-*   **Data Protection:** All transaction data is processed locally or stored securely in Firestore with strict security rules.
-*   **Authentication:** Google Login is required to save and track credit history.
-*   **Git Security:** Sensitive files like `.env`, `*.key`, and `firebase-applet-config.json` are automatically excluded via `.gitignore`.
+*   **PII Protection:** All transaction data is processed with strict privacy protocols.
+*   **Git Security:** Sensitive files (`.env`, `*.key`, `firebase-applet-config.json`) are automatically excluded.
+*   **Validation:** Every Firestore write is validated against a strict schema in `firestore.rules`.
 
 ---
 
 ## 📄 License
 
-This project is part of the **AltScore AI** initiative. All rights reserved.
+&copy; 2026 AltScore AI Systems. All rights reserved.

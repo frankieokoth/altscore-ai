@@ -1,4 +1,4 @@
-# AltScore AI: The "Magnum Opus" Credit Scoring Dashboard
+# AltScore AI: The Ultimate Credit Scoring Dashboard
 
 **AltScore AI** is a high-end, production-ready technical dashboard designed to revolutionize credit scoring using alternative data. It leverages AI to analyze M-Pesa transaction patterns, providing a sophisticated "Creditworthiness Index" for individuals and small businesses who lack traditional credit history.
 
